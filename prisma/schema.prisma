@@ -20,7 +20,7 @@ model Task {
   id         Int      @id @default(autoincrement())
   name       String
   content    String
-  done       String
+  done       Boolean @default(false)
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId Int
 }

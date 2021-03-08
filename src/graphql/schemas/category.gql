@@ -1,3 +1,21 @@
+# import { Task } from './task.gql'
+
 type Query {
     helloCat: String
+    getCategories: [Category!]!
+    getCategory(id: ID!): Category!
+}
+
+type Mutation {
+    createCategory(data: CategoryInput!): String!
+}
+
+type Category {
+    id: ID
+    name: String
+    task: [Task!]!
+}
+
+input CategoryInput {
+    name: String
 }
